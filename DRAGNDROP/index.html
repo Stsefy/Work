@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>drag&amp;drop</title>
+  </head>
+  <body style="min-height: 100vh">
+    <img src="http://fe.it-academy.by/Sites/0000007/sax.jpg" />
+    <img
+      src="http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png"
+      width="100"
+    />
+    <img
+      src="http://fe.it-academy.by/Sites/0000007/Man-and-woman.png"
+      width="150"
+    />
+    <img
+      src="http://fe.it-academy.by/Sites/0000007/No_smoking.png"
+      style="padding-left: 50px"
+    />
+
+    <script>
+      const images = Array.from(document.querySelectorAll("img"));
+
+      images.forEach((image, index) => {
+        image.style.position = "absolute";
+        image.style.height = "auto";
+        image.style.left = `${(index + 1) * 230}px`;
+        image.style.bottom = Math.floor(450) + "px";
+
+        image.onmousedown = function (event) {
+          this.style.cursor = "grabbing";
+          let shiftX = event.clientX - image.getBoundingClientRect().left;
+          let shiftY = event.clientY - image.getBoundingClientRect().top;
+
+          image.style.position = "absolute";
+          image.style.zIndex = 1000;
+          document.body.append(image);
+
+          function moveAt(pageX, pageY) {
+            image.style.left = pageX - shiftX + "px";
+            image.style.top = pageY - shiftY + "px";
+          }
+
+          function onMouseMove(event) {
+            moveAt(event.pageX, event.pageY);
+          }
+
+          document.addEventListener("mousemove", onMouseMove);
+
+          image.onmouseup = function () {
+            document.removeEventListener("mousemove", onMouseMove);
+            image.onmouseup = null;
+          };
+        };
+
+        image.ondragstart = function () {
+          return false;
+        };
+      });
+    </script>
+  </body>
+</html>
