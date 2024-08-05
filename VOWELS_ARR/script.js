@@ -2,8 +2,8 @@
 let word = prompt("Введите слово");
 
 function vowelsForEach(str) {
-  word = word.toLowerCase();
-  let arrWord = word.split("");
+  str = str.toLowerCase();
+  let arrWord = str.split("");
   const arrVowels = ["а", "о", "е", "и", "у", "я", "ю", "ы", "э", "ё"];
   let counterForEach = 0;
   arrWord.forEach((v) => {
@@ -15,16 +15,16 @@ function vowelsForEach(str) {
 }
 
 function vowelsFilter(str) {
-  word = word.toLowerCase();
-  let arrWord = word.split("");
+  str = str.toLowerCase();
+  let arrWord = str.split("");
   const arrVowels = ["а", "о", "е", "и", "у", "я", "ю", "ы", "э", "ё"];
   let counterFilter = arrWord.filter((v) => arrVowels.includes(v)).length;
   return counterFilter;
 }
 
 function vowelsReduse(str) {
-  word = word.toLowerCase();
-  let arrWord = word.split("");
+  str = str.toLowerCase();
+  let arrWord = str.split("");
   const arrVowels = ["а", "о", "е", "и", "у", "я", "ю", "ы", "э", "ё"];
   let counterReduse = arrWord.reduce((r, v) => {
     if (arrVowels.includes(v)) {

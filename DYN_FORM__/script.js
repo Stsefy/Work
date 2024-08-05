@@ -1,6 +1,7 @@
 function buildForm(formArray, formId) {
-  const formContainer = document.createElement(formId);
+  const formContainer = document.getElementById(formId);
   const form = document.createElement("form");
+
   formArray.forEach((field) => {
     switch (field.kind) {
       case "submit":
@@ -25,9 +26,58 @@ function buildForm(formArray, formId) {
         break;
       case "dropdown":
         const label1 = document.createElement("label");
-        label.textContent = field.
+        label1.textContent = field.label;
+
+        const select = document.createElement("select");
+        select.name = field.name;
+
+        field.variants.forEach((variant) => {
+          const option = document.createElement("option");
+          option.value = variant.value;
+          option.textContent = variant.text;
+          select.appendChild(option);
+        });
+        form.appendChild(label1);
+        form.appendChild(select);
+        form.appendChild(document.createElement("br"));
+        break;
+      case "radio":
+        const label2 = document.createElement("label");
+        label2.textContent = field.label;
+        form.appendChild(label2);
+
+        field.variants.forEach((variant) => {
+          const radioLabel = document.createElement("label");
+          radioLabel.textContent = variant.text;
+
+          const radioInput = document.createElement("input");
+          radioInput.type = "radio";
+          radioInput.name = field.name;
+          radioInput.value = variant.value;
+
+          radioLabel.appendChild(radioInput);
+          form.appendChild(radioLabel);
+        });
+        form.appendChild(document.createElement("br"));
+        break;
+      case "check":
+        const label3 = document.createElement("label");
+        label3.textContent = field.label;
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = field.name;
+
+        form.appendChild(label3);
+        form.appendChild(checkbox);
+        form.appendChild(document.createElement("br"));
+        break;
+      default:
+        console.error(`Неизвестный тип поля: ${field.kind}`);
     }
   });
+  formContainer.innerHTML = "";
+  formContainer.appendChild(form);
 }
 
 const formDef1 = [
