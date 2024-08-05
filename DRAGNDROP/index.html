@@ -20,44 +20,50 @@
     />
 
     <script>
-      const images = Array.from(document.querySelectorAll("img"));
+      function pos() {
+        const images = document.getElementsByTagName("img");
+        const arr = [];
+        for (const img of images) {
+          arr.push({ x: img.offsetLeft, y: img.offsetTop });
+        }
 
-      images.forEach((image, index) => {
-        image.style.position = "absolute";
-        image.style.height = "auto";
-        image.style.left = `${(index + 1) * 230}px`;
-        image.style.bottom = Math.floor(450) + "px";
+        for (let i = 0; i < images.length; i++) {
+          const img = images[i];
+          img.style.left = arr[i].x + "px";
+          img.style.top = arr[i].y + "px";
+          img.style.position = "absolute";
 
-        image.onmousedown = function (event) {
-          this.style.cursor = "grabbing";
-          let shiftX = event.clientX - image.getBoundingClientRect().left;
-          let shiftY = event.clientY - image.getBoundingClientRect().top;
+          img.onmousedown = function (eo) {
+            this.style.cursor = "grabbing";
+            let shiftX = eo.clientX - eo.target.offsetLeft;
+            let shiftY = eo.clientY - eo.target.offsetTop;
 
-          image.style.position = "absolute";
-          image.style.zIndex = 1000;
-          document.body.append(image);
+            img.style.zIndex = 1000;
+            document.body.append(img);
 
-          function moveAt(pageX, pageY) {
-            image.style.left = pageX - shiftX + "px";
-            image.style.top = pageY - shiftY + "px";
-          }
+            function moveAt(pageX, pageY) {
+              img.style.left = pageX - shiftX + "px";
+              img.style.top = pageY - shiftY + "px";
+            }
 
-          function onMouseMove(event) {
-            moveAt(event.pageX, event.pageY);
-          }
+            function onMouseMove(eo) {
+              moveAt(eo.pageX, eo.pageY);
+            }
 
-          document.addEventListener("mousemove", onMouseMove);
+            document.addEventListener("mousemove", onMouseMove);
 
-          image.onmouseup = function () {
-            document.removeEventListener("mousemove", onMouseMove);
-            image.onmouseup = null;
+            img.onmouseup = function () {
+              document.removeEventListener("mousemove", onMouseMove);
+              img.onmouseup = null;
+            };
           };
-        };
 
-        image.ondragstart = function () {
-          return false;
-        };
-      });
+          img.ondragstart = function () {
+            return false;
+          };
+        }
+      }
+      window.onload = pos;
     </script>
   </body>
 </html>
