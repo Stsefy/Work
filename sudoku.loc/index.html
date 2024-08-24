@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="media.css" />
+    <title>Sudoku SPA</title>
+  </head>
+  <body>
+    <header>
+      <h1>Sudoku</h1>
+      <nav>
+        <a href="#" id="home-link">Главная</a>
+        <a href="#" id="game-link">Игра</a>
+        <a href="#" id="account-link">Аккаунт</a>
+      </nav>
+    </header>
+
+    <main>
+      <div id="home-container">
+        <h2>Правила игры Судоку</h2>
+        <p>
+          Судоку - это логическая головоломка, в которой игроку необходимо
+          заполнить сетку 9x9 ячеек цифрами от 1 до 9 таким образом, чтобы в
+          каждом столбце, каждой строке и каждом из девяти блоков 3x3 не было
+          повторяющихся цифр.
+        </p>
+      </div>
+
+      <div id="game-container">
+        <div class="container">
+          <div class="sudoku-container">
+            <div class="sudoku-row">
+              <div id="0:0" class="sudoku-cell"></div>
+              <div id="0:1" class="sudoku-cell"></div>
+              <div id="0:2" class="sudoku-cell border"></div>
+              <div id="0:3" class="sudoku-cell"></div>
+              <div id="0:4" class="sudoku-cell"></div>
+              <div id="0:5" class="sudoku-cell border"></div>
+              <div id="0:6" class="sudoku-cell"></div>
+              <div id="0:7" class="sudoku-cell"></div>
+              <div id="0:8" class="sudoku-cell"></div>
+            </div>
+            <div class="sudoku-row">
+              <div id="1:0" class="sudoku-cell"></div>
+              <div id="1:1" class="sudoku-cell"></div>
+              <div id="1:2" class="sudoku-cell border"></div>
+              <div id="1:3" class="sudoku-cell"></div>
+              <div id="1:4" class="sudoku-cell"></div>
+              <div id="1:5" class="sudoku-cell border"></div>
+              <div id="1:6" class="sudoku-cell"></div>
+              <div id="1:7" class="sudoku-cell"></div>
+              <div id="1:8" class="sudoku-cell"></div>
+            </div>
+            <div class="sudoku-row border">
+              <div id="2:0" class="sudoku-cell"></div>
+              <div id="2:1" class="sudoku-cell"></div>
+              <div id="2:2" class="sudoku-cell border"></div>
+              <div id="2:3" class="sudoku-cell"></div>
+              <div id="2:4" class="sudoku-cell"></div>
+              <div id="2:5" class="sudoku-cell border"></div>
+              <div id="2:6" class="sudoku-cell"></div>
+              <div id="2:7" class="sudoku-cell"></div>
+              <div id="2:8" class="sudoku-cell"></div>
+            </div>
+            <div class="sudoku-row">
+              <div id="3:0" class="sudoku-cell"></div>
+              <div id="3:1" class="sudoku-cell"></div>
+              <div id="3:2" class="sudoku-cell border"></div>
+              <div id="3:3" class="sudoku-cell"></div>
+              <div id="3:4" class="sudoku-cell"></div>
+              <div id="3:5" class="sudoku-cell border"></div>
+              <div id="3:6" class="sudoku-cell"></div>
+              <div id="3:7" class="sudoku-cell"></div>
+              <div id="3:8" class="sudoku-cell"></div>
+            </div>
+            <div class="sudoku-row">
+              <div id="4:0" class="sudoku-cell"></div>
+              <div id="4:1" class="sudoku-cell"></div>
+              <div id="4:2" class="sudoku-cell border"></div>
+              <div id="4:3" class="sudoku-cell"></div>
+              <div id="4:4" class="sudoku-cell"></div>
+              <div id="4:5" class="sudoku-cell border"></div>
+              <div id="4:6" class="sudoku-cell"></div>
+              <div id="4:7" class="sudoku-cell"></div>
+              <div id="4:8" class="sudoku-cell"></div>
+            </div>
+            <div class="sudoku-row border">
+              <div id="5:0" class="sudoku-cell"></div>
+              <div id="5:1" class="sudoku-cell"></div>
+              <div id="5:2" class="sudoku-cell border"></div>
+              <div id="5:3" class="sudoku-cell"></div>
+              <div id="5:4" class="sudoku-cell"></div>
+              <div id="5:5" class="sudoku-cell border"></div>
+              <div id="5:6" class="sudoku-cell"></div>
+              <div id="5:7" class="sudoku-cell"></div>
+              <div id="5:8" class="sudoku-cell"></div>
+            </div>
+            <div class="sudoku-row">
+              <div id="6:0" class="sudoku-cell"></div>
+              <div id="6:1" class="sudoku-cell"></div>
+              <div id="6:2" class="sudoku-cell border"></div>
+              <div id="6:3" class="sudoku-cell"></div>
+              <div id="6:4" class="sudoku-cell"></div>
+              <div id="6:5" class="sudoku-cell border"></div>
+              <div id="6:6" class="sudoku-cell"></div>
+              <div id="6:7" class="sudoku-cell"></div>
+              <div id="6:8" class="sudoku-cell"></div>
+            </div>
+            <div class="sudoku-row">
+              <div id="7:0" class="sudoku-cell"></div>
+              <div id="7:1" class="sudoku-cell"></div>
+              <div id="7:2" class="sudoku-cell border"></div>
+              <div id="7:3" class="sudoku-cell"></div>
+              <div id="7:4" class="sudoku-cell"></div>
+              <div id="7:5" class="sudoku-cell border"></div>
+              <div id="7:6" class="sudoku-cell"></div>
+              <div id="7:7" class="sudoku-cell"></div>
+              <div id="7:8" class="sudoku-cell"></div>
+            </div>
+            <div class="sudoku-row">
+              <div id="8:0" class="sudoku-cell"></div>
+              <div id="8:1" class="sudoku-cell"></div>
+              <div id="8:2" class="sudoku-cell border"></div>
+              <div id="8:3" class="sudoku-cell"></div>
+              <div id="8:4" class="sudoku-cell"></div>
+              <div id="8:5" class="sudoku-cell border"></div>
+              <div id="8:6" class="sudoku-cell"></div>
+              <div id="8:7" class="sudoku-cell"></div>
+              <div id="8:8" class="sudoku-cell"></div>
+            </div>
+          </div>
+          <div class="control-buttons-container">
+            <div id="button1" class="number-button">1</div>
+            <div id="button2" class="number-button">2</div>
+            <div id="button3" class="number-button">3</div>
+            <div id="button4" class="number-button">4</div>
+            <div id="button5" class="number-button">5</div>
+            <div id="button6" class="number-button">6</div>
+            <div id="button7" class="number-button">7</div>
+            <div id="button8" class="number-button">8</div>
+            <div id="button9" class="number-button">9</div>
+            <div id="clearButton" class="clear-button">Ластик</div>
+            <div id="disableHintsButton" class="disable-hints-button">X</div>
+          </div>
+        </div>
+        <div class="container end-container">
+          <div class="win-message">Поздравляем! Судоку решена!</div>
+          <audio id="win-sound" src="sound.mp3"></audio>
+          <div id="restartButton" class="restart-button">Новая игра</div>
+        </div>
+      </div>
+
+      <div id="account-container">
+        <h2>Аккаунт</h2>
+        <form id="registration-form">
+          <label for="username">Имя пользователя:</label>
+          <input type="text" id="username" required />
+          <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p id="win-count">Выигранных партий:<span id="wins-count">0</span></p>
+      </div>
+    </main>
+
+    <script>
+      window.addEventListener("popstate", (event) => {
+        if (event.state && event.state.page) {
+          showPage(event.state.page);
+        } else {
+          window.location.reload();
+        }
+      });
+
+      function showPage(page) {
+        document
+          .querySelectorAll(
+            "#home-container, #game-container, #account-container"
+          )
+          .forEach((container) => {
+            container.style.display = "none";
+          });
+
+        document.getElementById(`${page}-container`).style.display = "block";
+      }
+
+      // Обработчик ссылок для AJAX-навигации
+      document.querySelectorAll('a[id$="-link"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const page = event.target.id.replace("-link", "");
+          loadPage(page);
+        });
+      });
+
+      let isUserLoggedIn = false;
+
+      // Загрузка страницы
+      function loadPage(page) {
+        window.onbeforeunload = function (e) {
+          e.returnValue = "Не забыли ли вы сохранить изменения?";
+          return e.returnValue; // Этот код нужен для поддержки старых браузеров.
+        };
+
+        window.history.pushState({ page: page }, "", `#${page}`);
+
+        showPage(page);
+      }
+
+      const registrationForm = document.getElementById("registration-form");
+      registrationForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        isUserLoggedIn = true;
+        document.getElementById(
+          "win-count"
+        ).textContent = `Выигранных партий: 0`;
+      });
+    </script>
+    <script src="index.js"></script>
+    <script src="win.js"></script>
+    <script src="confetti.js"></script>
+  </body>
+</html>

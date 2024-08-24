@@ -1,0 +1,205 @@
+@media (min-width: 1200px) {
+  .sudoku-container {
+    width: 544px;
+    height: 548px;
+  }
+
+  .sudoku-cell {
+    width: 60px;
+    height: 60px;
+    font-size: 48px;
+  }
+
+  .control-buttons-container {
+    width: 418.5px;
+    height: 548px;
+  }
+
+  .number-button {
+    width: 129.5px;
+    height: 129.5px;
+    font-size: 48px;
+  }
+
+  .clear-button {
+    width: 274px;
+    font-size: 48px;
+  }
+
+  .disable-hints-button {
+    width: 129.5px;
+    font-size: 48px;
+  }
+
+  .restart-button {
+    font-size: 24px;
+    padding: 10px 20px;
+  }
+}
+
+/* Стили для средних экранов */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
+  .sudoku-container {
+    width: 400px;
+    height: 404px;
+  }
+
+  .sudoku-cell {
+    width: 44px;
+    height: 44px;
+    font-size: 36px;
+  }
+
+  .control-buttons-container {
+    width: 308.5px;
+    height: 404px;
+  }
+
+  .number-button {
+    width: 95.5px;
+    height: 95.5px;
+    font-size: 36px;
+  }
+
+  .clear-button {
+    width: 202px;
+    font-size: 36px;
+  }
+
+  .disable-hints-button {
+    width: 95.5px;
+    font-size: 36px;
+  }
+
+  .restart-button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+  .container {
+    display: grid;
+  }
+  .sudoku-container {
+    width: 400px;
+    height: 404px;
+  }
+
+  .sudoku-cell {
+    width: 44px;
+    height: 44px;
+    font-size: 36px;
+  }
+
+  .control-buttons-container {
+    width: 308.5px;
+    height: 404px;
+  }
+
+  .number-button {
+    width: 95.5px;
+    height: 95.5px;
+    font-size: 36px;
+  }
+
+  .clear-button {
+    width: 202px;
+    font-size: 36px;
+  }
+
+  .disable-hints-button {
+    width: 95.5px;
+    font-size: 36px;
+  }
+
+  .restart-button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 767px) and (orientation: landscape) {
+  .sudoku-container {
+    width: 300px;
+    height: 304px;
+  }
+
+  .sudoku-cell {
+    width: 33px;
+    height: 33px;
+    font-size: 24px;
+  }
+
+  .control-buttons-container {
+    width: 308.5px;
+    height: 304px;
+  }
+
+  .number-button {
+    width: 71.5px;
+    height: 71.5px;
+    font-size: 24px;
+  }
+
+  .clear-button {
+    width: 150px;
+    font-size: 24px;
+  }
+
+  .disable-hints-button {
+    width: 71.5px;
+    font-size: 24px;
+  }
+
+  .restart-button {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .container {
+    display: grid;
+    gap: 5px;
+  }
+  .sudoku-container {
+    width: 300px;
+    height: 304px;
+  }
+
+  .sudoku-cell {
+    width: 33px;
+    height: 33px;
+    font-size: 24px;
+  }
+
+  .control-buttons-container {
+    width: 308.5px;
+    height: 110px;
+    gap: 0;
+  }
+
+  .number-button {
+    width: 45.5px;
+    height: 45.5px;
+    font-size: 20px;
+  }
+
+  .clear-button {
+    width: 100px;
+    font-size: 20px;
+    height: 45px;
+  }
+
+  .disable-hints-button {
+    width: 45.5px;
+    height: 45.5px;
+    font-size: 18px;
+  }
+
+  .restart-button {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+}

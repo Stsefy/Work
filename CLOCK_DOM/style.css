@@ -1,0 +1,17 @@
+.circle {
+  position: absolute;
+  background-color: rgb(98, 98, 255);
+  border-radius: 50%;
+}
+.small-circle {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+.hour-hand,
+.minute-hand,
+.second-hand {
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+}
